@@ -67,14 +67,11 @@
                     android:text="College Name"
                     android:textColor="#000"/>
 
-                <EditText
+                <Spinner
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:inputType="text"
-                    android:id="@+id/college_name"
-                    android:hint="Enter your college name"
-                    android:textColor="#000"/>
+                    android:id="@+id/college_name_spinner"
+                    android:layout_weight="2"/>
 
             </LinearLayout>
 
