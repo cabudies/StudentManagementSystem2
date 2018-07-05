@@ -2,6 +2,7 @@ package com.brillicaservices.gurjas.studentmanagementsystem;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    static final String TAG = MainActivity.class.getName();
     /*
     * Creating global object of different views that we
     * are going to use in our application.
@@ -70,7 +72,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         /*
         * Creating an arrayAdapter object and passing 3 different arguments
         * i.e. context, layout, array*/
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, collegeNames);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_dropdown_item, collegeNames);
 
         /*
         * using the spinner's setAdapter method to update it's adapter*/
@@ -131,6 +134,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     displayStudentsResultTV.setText(displayStudentsResultTV.getText() +
                             "Student Address is: " + studentArrayList.get(i).studentAddress + "\n");
                     displayStudentsResultTV.setText(displayStudentsResultTV.getText() + "****************\n\n");
+
+//                    Log.d(TAG, studentArrayList.get(i).studentName + "\n");
+//                    Log.d(TAG, studentArrayList.get(i).studentCollege + "\n");
+//                    Log.d(TAG, studentArrayList.get(i).studentPhoneNumber+ "\n");
+//                    Log.d(TAG, studentArrayList.get(i).studentAddress + "\n");
                 }
             }
         });
@@ -148,5 +156,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
