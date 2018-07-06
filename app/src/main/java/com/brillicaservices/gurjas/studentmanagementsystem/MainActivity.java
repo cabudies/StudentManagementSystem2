@@ -93,18 +93,42 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 /*
                 * On the click of the button, getting values from
                 * the user input.*/
-                String name = studentNameTF.getText().toString();
-                int phone = Integer.parseInt(studentPhoneTF.getText().toString());
-                String address = studentAddressTF.getText().toString();
 
-                /*
-                * Storing the new values into the arrayList using the
-                * Student class object.*/
-                studentArrayList.add(new Student(name, collegeName, phone, address));
 
-                /*
-                * Showing a success message once the data has been saved into arrayList*/
-                Toast.makeText(getApplicationContext(), "Student data saved successfully", Toast.LENGTH_LONG).show();
+
+                try {
+                    String name = studentNameTF.getText().toString();
+                    int phone = Integer.parseInt(studentPhoneTF.getText().toString());
+                    String address = studentAddressTF.getText().toString();
+
+                    /*
+                     * Storing the new values into the arrayList using the
+                     * Student class object.*/
+                    if ((name.length()>1) &&
+                            (studentPhoneTF.length()==10) &&
+                            (address.length()>5) &&
+                            (!collegeName.equals(collegeNames[0])) ) {
+                        studentArrayList.add(new Student(name, collegeName, phone, address));
+                        /*
+                         * Showing a success message once the data has been saved into arrayList*/
+                        Toast.makeText(getApplicationContext(),
+                                "Student data saved successfully",
+                                Toast.LENGTH_LONG).show();
+                    } else if(name.length()<1){
+                        Toast.makeText(getApplicationContext(),
+                                "Name should be greater than 1 character.",
+                                Toast.LENGTH_LONG).show();
+                    }
+
+                }
+                catch (NumberFormatException e){
+                    Toast.makeText(getApplicationContext(),
+                            "Please check your values",
+                            Toast.LENGTH_LONG).show();
+                }
+
+
+
             }
         });
 
