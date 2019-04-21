@@ -10,5 +10,5 @@ We have used scroll view so that we can scroll through our page.
 
 # Screenshots
 
-![alt text](https://github.com/cabudies/StudentManagementSystem2/blob/master/Screenshot_1530684072.png)
+![alt text](https://cabudies.github.io/StudentManagementSystem2/Screenshot_1530684072.png)
 
